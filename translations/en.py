@@ -12,5 +12,5 @@ en = {
     "week": "Week",
     "day": "Day",
     "today": "Today",
-    "dateFormat": "%m %d, %Y"
+    "dateFormat": "%B %d, %Y"
 }
