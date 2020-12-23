@@ -12,5 +12,5 @@ de = {
     "week": "Woche",
     "day": "Tag",
     "today": "Heute",
-    "dateFormat": "%d. %B, %Y"
+    "dateFormat": "%d. %B %Y"
 }
