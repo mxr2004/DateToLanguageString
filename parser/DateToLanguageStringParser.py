@@ -9,8 +9,8 @@ def convertDateTimeToString(dateTime: datetime, outputLanguage, alwaysShowDate=F
         today = datetime.utcnow()
         dateTime = dateTime - timedelta(days=1)
         delta: timedelta = today - dateTime
-        if abs(delta.days / 30) >= 1:
-            if abs(delta.days / 30) == 1:
+        if int(delta.days / 30) >= 1:
+            if int(delta.days / 30) == 1:
                 translation = language.getTranslation(translationtype="%s month ago",
                                                       searchlanguage=outputLanguage) % int(delta.days / 30)
             else:
