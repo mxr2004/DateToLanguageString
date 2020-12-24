@@ -12,10 +12,10 @@ def convertDateTimeToString(dateTime: datetime, outputLanguage, alwaysShowDate=F
         if abs(delta.days / 30) >= 1:
             if abs(delta.days / 30) == 1:
                 translation = language.getTranslation(translationtype="%s month ago",
-                                                      searchlanguage=outputLanguage) % abs(delta.days / 30)
+                                                      searchlanguage=outputLanguage) % int(delta.days / 30)
             else:
                 translation = language.getTranslation(translationtype="%s months ago",
-                                                      searchlanguage=outputLanguage) % abs(delta.days / 30)
+                                                      searchlanguage=outputLanguage) % int(delta.days / 30)
         else:
             if delta.days == 1:
                 translation = language.getTranslation(translationtype="%s day ago",
