@@ -4,10 +4,10 @@ from datetime import datetime, timedelta
 from ..utils import language
 
 
-def convertDateTimeToString(dateTime, outputLanguage, alwaysShowDate=False):
+def convertDateTimeToString(dateTime: datetime, outputLanguage, alwaysShowDate=False):
     if not alwaysShowDate:
         today = datetime.utcnow()
-        dateTime = dateTime.days + 1
+        dateTime = dateTime + timedelta(days=1)
         delta: timedelta = today - dateTime
         if abs(delta.days / 30) >= 1:
             if abs(delta.days / 30) == 1:
