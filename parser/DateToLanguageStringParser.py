@@ -6,14 +6,23 @@ from ..utils import language
 
 def convertDateTimeToString(dateTime, outputLanguage, alwaysShowDate=False):
     if not alwaysShowDate:
-        today = datetime.now()
+        today = datetime.utcnow()
+        dateTime = dateTime.days + 1
         delta: timedelta = today - dateTime
-        if abs(delta.days / 30) > 1:
-            translation = language.getTranslation(translationtype="%s months ago",
-                                                  searchlanguage=outputLanguage) % delta.days / 30
+        if abs(delta.days / 30) >= 1:
+            if abs(delta.days / 30) == 1:
+                translation = language.getTranslation(translationtype="%s month ago",
+                                                      searchlanguage=outputLanguage) % abs(delta.days / 30)
+            else:
+                translation = language.getTranslation(translationtype="%s months ago",
+                                                      searchlanguage=outputLanguage) % abs(delta.days / 30)
         else:
-            translation = language.getTranslation(translationtype="%s days ago",
-                                                  searchlanguage=outputLanguage) % delta.days
+            if delta.days == 1:
+                translation = language.getTranslation(translationtype="%s day ago",
+                                                      searchlanguage=outputLanguage) % delta.days
+            else:
+                translation = language.getTranslation(translationtype="%s days ago",
+                                                      searchlanguage=outputLanguage) % delta.days
         return translation
 
     else:

@@ -11,7 +11,9 @@ en = {
     "month": "Month",
     "week": "Week",
     "%s months ago": "%s months ago",
+    "1 month ago": "1 month ago",
     "%s days ago": "%s days ago",
+    "1 day ago": "1 day ago",
     "day": "Day",
     "today": "Today",
     "dateFormat": "%B %d, %Y"
