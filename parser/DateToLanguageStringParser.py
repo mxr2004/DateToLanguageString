@@ -5,7 +5,7 @@ from ..utils import language
 
 
 def convertDateTimeToString(dateTime: datetime, outputLanguage, alwaysShowDate=False):
-    if not alwaysShowDate:
+    if not alwaysShowDate and canBeShortString(dateTime=dateTime):
         today = datetime.utcnow()
         dateTime = dateTime - timedelta(days=1)
         delta: timedelta = today - dateTime
@@ -46,3 +46,13 @@ def convertDateTimeToString(dateTime: datetime, outputLanguage, alwaysShowDate=F
                         dateTime.month - 1]))
             print(useFormat)
         return useFormat
+
+
+def canBeShortString(dateTime) -> bool:
+    today = datetime.utcnow()
+    dateTime = dateTime - timedelta(days=1)
+    delta: timedelta = today - dateTime
+    if delta.days <= 60:
+        return True
+    else:
+        return False
