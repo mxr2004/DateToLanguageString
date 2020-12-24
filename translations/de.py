@@ -11,6 +11,9 @@ de = {
     "month": "Monat",
     "week": "Woche",
     "day": "Tag",
+    "%s months ago": "vor %s Monaten",
+    "%s days ago": "vor %s Tagen",
+    "days": "Tage",
     "today": "Heute",
     "dateFormat": "%d. %B %Y"
 }

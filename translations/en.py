@@ -10,6 +10,8 @@ en = {
     "year": "Year",
     "month": "Month",
     "week": "Week",
+    "%s months ago": "%s months ago",
+    "%s days ago": "%s days ago",
     "day": "Day",
     "today": "Today",
     "dateFormat": "%B %d, %Y"
